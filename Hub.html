@@ -4,96 +4,132 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MycoHero Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
       margin: 0;
-      height: 100vh;
-      background: radial-gradient(circle at center, #0d0d1a 0%, #000 100%);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      background: radial-gradient(circle at center, #0f0f2d, #050510 90%);
+      overflow-x: hidden;
       font-family: 'Montserrat', sans-serif;
       color: white;
     }
-    .helix-container {
+    canvas {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
+      z-index: -1;
     }
-    svg {
-      width: 100%;
-      height: 100%;
-    }
-    .helix-path {
-      stroke: #ff00ff;
-      stroke-width: 3;
-      fill: none;
-      stroke-dasharray: 10 20;
-      animation: move 6s linear infinite;
-    }
-    @keyframes move {
-      to { stroke-dashoffset: -100; }
-    }
-    .spore {
-      fill: #00ffff;
-      opacity: 0.7;
-      animation: floatUp 6s linear infinite;
-    }
-    @keyframes floatUp {
-      0% { transform: translateY(100vh); opacity: 0; }
-      30% { opacity: 1; }
-      100% { transform: translateY(-10vh); opacity: 0; }
-    }
-    h1 {
-      font-size: 3rem;
-      font-weight: bold;
-      margin-bottom: 40px;
-      z-index: 2;
-    }
-    .mushroom-button {
-      width: 150px;
-      height: 150px;
-      margin: 15px;
-      border-radius: 50% 50% 40% 40%;
-      background: linear-gradient(135deg, #7c3aed, #9333ea);
+    .mushroom-btn {
+      width: 180px;
+      height: 180px;
+      border-radius: 50% 50% 45% 45%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: bold;
       font-size: 1.2rem;
+      font-weight: bold;
+      margin: 30px auto;
       cursor: pointer;
-      color: white;
-      text-decoration: none;
-      box-shadow: 0 0 30px rgba(124, 58, 237, 0.8);
-      transition: transform 0.3s;
-      z-index: 2;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .mushroom-button:hover {
+    .mushroom-btn:hover {
       transform: scale(1.1);
+      box-shadow: 0 0 30px rgba(255,255,255,0.6);
     }
   </style>
 </head>
 <body>
-  <div class="helix-container">
-    <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
-      <path class="helix-path" d="M200 0 C400 150, 400 450, 200 600" />
-      <path class="helix-path" d="M600 0 C400 150, 400 450, 600 600" />
-      <circle class="spore" cx="300" cy="500" r="6"/>
-      <circle class="spore" cx="500" cy="550" r="4"/>
-      <circle class="spore" cx="400" cy="600" r="5"/>
-    </svg>
-  </div>
-  
-  <h1>Choose Your Path</h1>
-  <a href="shop.html" class="mushroom-button">Shop</a>
-  <a href="science.html" class="mushroom-button">Science</a>
-  <a href="rewards.html" class="mushroom-button">Hero Rewards</a>
-  <a href="partners.html" class="mushroom-button">Hero Partners</a>
-  <a href="herozen.html" class="mushroom-button">HeroZen</a>
+  <canvas id="helix"></canvas>
+
+  <section class="flex flex-col items-center justify-center min-h-screen">
+    <h1 class="text-4xl font-extrabold mb-10">Choose Your Path</h1>
+    <a href="shop.html" class="mushroom-btn" style="background: linear-gradient(135deg, #a855f7, #7e22ce);">Shop</a>
+    <a href="science.html" class="mushroom-btn" style="background: linear-gradient(135deg, #22c55e, #15803d);">Science</a>
+    <a href="rewards.html" class="mushroom-btn" style="background: linear-gradient(135deg, #ec4899, #be185d);">Hero Rewards</a>
+    <a href="partners.html" class="mushroom-btn" style="background: linear-gradient(135deg, #3b82f6, #1e3a8a);">Hero Partners</a>
+    <a href="herozen.html" class="mushroom-btn" style="background: linear-gradient(135deg, #f97316, #c2410c);">HeroZen</a>
+  </section>
+
+  <script>
+    const canvas = document.getElementById("helix");
+    const ctx = canvas.getContext("2d");
+    let width, height;
+    let spores = [];
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resize);
+    resize();
+
+    function createSpore(x, y, color) {
+      return {
+        x, y, color,
+        radius: Math.random() * 3 + 2,
+        dx: (Math.random() - 0.5) * 1,
+        dy: (Math.random() - 0.5) * 1,
+        alpha: 1
+      };
+    }
+
+    function drawHelix(time) {
+      ctx.clearRect(0, 0, width, height);
+
+      ctx.lineWidth = 3;
+      let spacing = 40;
+      let amplitude = 100;
+      let frequency = 0.02;
+
+      for (let i = -height/2; i < height/2; i += spacing) {
+        let x1 = width/2 + Math.sin(time/500 + i*frequency) * amplitude;
+        let x2 = width/2 - Math.sin(time/500 + i*frequency) * amplitude;
+        let y = i + height/2;
+
+        // Left strand
+        ctx.strokeStyle = "rgba(138,43,226,0.8)";
+        ctx.shadowColor = "blueviolet";
+        ctx.shadowBlur = 15;
+        ctx.beginPath();
+        ctx.arc(x1, y, 2, 0, Math.PI*2);
+        ctx.stroke();
+
+        // Right strand
+        ctx.strokeStyle = "rgba(0,255,200,0.8)";
+        ctx.shadowColor = "aqua";
+        ctx.shadowBlur = 15;
+        ctx.beginPath();
+        ctx.arc(x2, y, 2, 0, Math.PI*2);
+        ctx.stroke();
+
+        // Randomly spawn spores
+        if (Math.random() < 0.01) {
+          spores.push(createSpore(x1, y, "rgba(138,43,226,1)"));
+        }
+        if (Math.random() < 0.01) {
+          spores.push(createSpore(x2, y, "rgba(0,255,200,1)"));
+        }
+      }
+
+      // Draw spores
+      spores.forEach((spore, i) => {
+        spore.x += spore.dx;
+        spore.y += spore.dy;
+        spore.alpha -= 0.005;
+        if (spore.alpha <= 0) spores.splice(i, 1);
+
+        ctx.fillStyle = spore.color.replace("1)", spore.alpha + ")");
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = spore.color;
+        ctx.beginPath();
+        ctx.arc(spore.x, spore.y, spore.radius, 0, Math.PI*2);
+        ctx.fill();
+      });
+
+      requestAnimationFrame(drawHelix);
+    }
+
+    requestAnimationFrame(drawHelix);
+  </script>
 </body>
 </html>
