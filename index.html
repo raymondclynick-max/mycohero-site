@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MycoHero+ | Be Your Own Hero</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+    body { font-family: 'Montserrat', sans-serif; background: #0f172a; color: white; }
+    .gradient-text { background: linear-gradient(90deg,#9333ea,#ec4899,#22c55e,#3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .mushroom-btn {
+      width: 120px; height: 120px; border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+      background: radial-gradient(circle at center, #9333ea, #5b21b6);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; font-weight: bold; color: white;
+      text-shadow: 0 0 8px #ec4899, 0 0 15px #9333ea;
+      box-shadow: 0 0 25px rgba(147,51,234,0.7);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .mushroom-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 40px rgba(236,72,153,0.8);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center h-screen bg-cover bg-center" style="background-image: url('images/MycoHero.jpg');">
+
+  <div class="text-center">
+    <h1 class="text-6xl md:text-8xl font-black gradient-text mb-10">BE YOUR OWN HERO</h1>
+    <a href="hub.html" class="mushroom-btn mx-auto">Enter</a>
+  </div>
+
+</body>
+</html>

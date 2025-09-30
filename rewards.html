@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MycoHero+ Rewards</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: #0f172a; font-family: 'Montserrat', sans-serif; color: white; }
+    .gradient-text { background: linear-gradient(90deg,#9333ea,#ec4899,#22c55e,#3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .card { background: #1e293b; border-radius: 12px; padding: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 10px 25px rgba(139,92,246,0.4); }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="bg-gray-900 border-b border-gray-800 fixed w-full z-20 top-0">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="hub.html" class="text-2xl font-black gradient-text">MycoHero+</a>
+      <div class="space-x-6">
+        <a href="shop.html" class="text-purple-300 hover:text-white">Shop</a>
+        <a href="science.html" class="text-purple-300 hover:text-white">Science</a>
+        <a href="rewards.html" class="text-purple-300 hover:text-white">Hero Rewards</a>
+        <a href="partners.html" class="text-purple-300 hover:text-white">Hero Partners</a>
+        <a href="herozen.html" class="text-purple-300 hover:text-white">HeroZen</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="h-72 flex items-center justify-center bg-gradient-to-r from-pink-600 via-purple-700 to-blue-600 mt-16">
+    <h1 class="text-6xl font-black">Hero Rewards</h1>
+  </section>
+
+  <!-- Hero Points -->
+  <section class="py-20 max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10">
+    <div class="card">
+      <h2 class="text-3xl text-yellow-400 font-bold mb-4">Hero Points</h2>
+      <p class="text-gray-300 mb-4">
+        Earn points every time you shop. Redeem them for <span class="text-purple-400 font-bold">products</span>, 
+        <span class="text-green-400 font-bold">merchandise</span>, or exclusive <span class="text-pink-400 font-bold">Hero Rewards</span>.
+      </p>
+      <ul class="text-gray-400 text-sm space-y-2">
+        <li>🟣 Earn <b>1 Hero Point per €1</b> spent</li>
+        <li>🟣 Fractional points count (e.g. €11.25 = 11.25 points)</li>
+        <li>🟣 Redeem for discounts, merch, and partner perks</li>
+      </ul>
+    </div>
+
+    <!-- Hero+ Subscription -->
+    <div class="card">
+      <h2 class="text-3xl text-green-400 font-bold mb-4">Hero+ Subscription</h2>
+      <p class="text-gray-300 mb-4">
+        Subscribe monthly for a perfect supply of your Hero formula. Save money, earn more points, and unlock insider content.
+      </p>
+      <ul class="text-gray-400 text-sm space-y-2">
+        <li>💚 <b>5% discount</b> every month</li>
+        <li>💚 <b>2x Hero Points</b> on every subscription order</li>
+        <li>💚 Access to exclusive guides & science insights</li>
+        <li>💚 Cancel or switch products anytime</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-gray-800 py-16 text-center">
+    <h2 class="text-4xl font-bold text-purple-400 mb-6">Be Rewarded for Being Your Own Hero</h2>
+    <p class="text-gray-300 mb-8">Join Hero Rewards today and start earning points towards wellness, style, and exclusive HeroZen retreats.</p>
+    <a href="shop.html" class="bg-purple-600 hover:bg-purple-700 py-4 px-8 rounded-full font-bold text-lg">Start Earning</a>
+  </section>
+
+</body>
+</html>

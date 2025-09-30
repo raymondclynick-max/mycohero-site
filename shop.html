@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MycoHero+ Shop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: #0f172a; font-family: 'Montserrat', sans-serif; color: white; }
+    .gradient-text { background: linear-gradient(90deg,#9333ea,#ec4899,#22c55e,#3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="bg-gray-900 border-b border-gray-800 fixed w-full z-20 top-0">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="hub.html" class="text-2xl font-black gradient-text">MycoHero+</a>
+      <div class="space-x-6">
+        <a href="shop.html" class="text-purple-300 hover:text-white">Shop</a>
+        <a href="science.html" class="text-purple-300 hover:text-white">Science</a>
+        <a href="rewards.html" class="text-purple-300 hover:text-white">Hero Rewards</a>
+        <a href="partners.html" class="text-purple-300 hover:text-white">Hero Partners</a>
+        <a href="herozen.html" class="text-purple-300 hover:text-white">HeroZen</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="h-72 flex items-center justify-center bg-purple-700 bg-opacity-40 mt-16">
+    <h1 class="text-6xl font-black gradient-text">Shop the Heroes</h1>
+  </section>
+
+  <!-- Product Grid -->
+  <section class="py-20 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
+    <!-- Example product -->
+    <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+      <img src="images/BrainFuel.png" alt="BrainFuel+" class="h-48 mx-auto mb-6">
+      <h2 class="text-2xl text-purple-400 font-bold">BrainFuel+</h2>
+      <p class="text-gray-300 mb-2">Lion’s Mane + B12 & Folate</p>
+      <p class="text-gray-400 text-sm">EFSA-approved cognitive support</p>
+      <div class="flex justify-between items-center mt-4">
+        <span class="text-lg font-bold text-purple-300">€11.25</span>
+        <button class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded">Add</button>
+      </div>
+    </div>
+
+    <!-- Repeat for all products -->
+    <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+      <img src="images/ImmuneFlex.png" alt="ImmuneFlex+" class="h-48 mx-auto mb-6">
+      <h2 class="text-2xl text-green-400 font-bold">ImmuneFlex+</h2>
+      <p class="text-gray-300 mb-2">Reishi + Vitamin C & D</p>
+      <p class="text-gray-400 text-sm">Supports immunity</p>
+      <div class="flex justify-between items-center mt-4">
+        <span class="text-lg font-bold text-green-300">€11.25</span>
+        <button class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded">Add</button>
+      </div>
+    </div>
+
+    <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+      <img src="images/PowerFlow.png" alt="PowerFlow+" class="h-48 mx-auto mb-6">
+      <h2 class="text-2xl text-red-400 font-bold">PowerFlow+</h2>
+      <p class="text-gray-300 mb-2">Cordyceps + B Vitamins</p>
+      <p class="text-gray-400 text-sm">Boosts energy & endurance</p>
+      <div class="flex justify-between items-center mt-4">
+        <span class="text-lg font-bold text-red-300">€11.25</span>
+        <button class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded">Add</button>
+      </div>
+    </div>
+
+    <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+      <img src="images/GlowShroom.png" alt="GlowShroom+" class="h-48 mx-auto mb-6">
+      <h2 class="text-2xl text-pink-400 font-bold">GlowShroom+</h2>
+      <p class="text-gray-300 mb-2">Tremella + Vitamin C</p>
+      <p class="text-gray-400 text-sm">Skin hydration & radiance</p>
+      <div class="flex justify-between items-center mt-4">
+        <span class="text-lg font-bold text-pink-300">€11.25</span>
+        <button class="bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded">Add</button>
+      </div>
+    </div>
+
+    <div class="bg-gray-800 p-6 rounded-xl shadow-lg col-span-1 md:col-span-2">
+      <img src="images/TotalBalance.png" alt="TotalBalance+" class="h-48 mx-auto mb-6">
+      <h2 class="text-2xl text-blue-400 font-bold">TotalBalance+</h2>
+      <p class="text-gray-300 mb-2">Multi-mushroom blend + essential vitamins</p>
+      <p class="text-gray-400 text-sm">Complete daily support</p>
+      <div class="flex justify-between items-center mt-4">
+        <span class="text-lg font-bold text-blue-300">€11.25</span>
+        <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded">Add</button>
+      </div>
+    </div>
+
+    <div class="bg-gray-800 p-6 rounded-xl shadow-lg md:col-span-3">
+      <img src="images/HeroCollection.png" alt="The Hero Collection" class="h-48 mx-auto mb-6">
+      <h2 class="text-2xl text-yellow-400 font-bold">The Hero Collection</h2>
+      <p class="text-gray-300 mb-2">All 5 heroes + Grow Your Own Kit</p>
+      <p class="text-gray-400 text-sm">Ultimate optimization bundle</p>
+      <div class="flex justify-between items-center mt-4">
+        <span class="text-lg font-bold text-yellow-300">€50</span>
+        <button class="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded">Add</button>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

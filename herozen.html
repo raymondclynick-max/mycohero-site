@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MycoHero+ HeroZen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: #0f172a; font-family: 'Montserrat', sans-serif; color: white; }
+    .gradient-text { background: linear-gradient(90deg,#facc15,#9333ea,#ec4899,#22c55e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .card { background: #1e293b; border-radius: 12px; padding: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 10px 25px rgba(250,204,21,0.4); }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="bg-gray-900 border-b border-gray-800 fixed w-full z-20 top-0">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="hub.html" class="text-2xl font-black gradient-text">MycoHero+</a>
+      <div class="space-x-6">
+        <a href="shop.html" class="text-purple-300 hover:text-white">Shop</a>
+        <a href="science.html" class="text-purple-300 hover:text-white">Science</a>
+        <a href="rewards.html" class="text-purple-300 hover:text-white">Hero Rewards</a>
+        <a href="partners.html" class="text-purple-300 hover:text-white">Hero Partners</a>
+        <a href="herozen.html" class="text-purple-300 hover:text-white">HeroZen</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="h-72 flex items-center justify-center bg-gradient-to-r from-yellow-400 via-pink-600 to-purple-700 mt-16">
+    <h1 class="text-6xl font-black">HeroZen Retreats</h1>
+  </section>
+
+  <!-- Retreat Grid -->
+  <section class="py-20 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+    <!-- Retreat 1 -->
+    <div class="card">
+      <img src="images/retreat1.png" alt="Zen Spa Cyprus" class="h-48 w-full object-cover rounded-lg mb-6">
+      <h2 class="text-2xl text-pink-400 font-bold mb-2">Zen Spa Cyprus</h2>
+      <p class="text-gray-300 text-sm mb-2">Ocean-view spa with MycoHero treatments. Restore balance with luxury therapies.</p>
+      <p class="text-yellow-300 font-bold">Earn 10 Hero Points per €1 spent</p>
+    </div>
+
+    <!-- Retreat 2 -->
+    <div class="card">
+      <img src="images/retreat2.png" alt="Alpine Retreat" class="h-48 w-full object-cover rounded-lg mb-6">
+      <h2 class="text-2xl text-green-400 font-bold mb-2">Alpine Retreat</h2>
+      <p class="text-gray-300 text-sm mb-2">Wellness escape in the mountains. Yoga, nutrition, and HeroFlow experiences.</p>
+      <p class="text-yellow-300 font-bold">Earn 10 Hero Points per €1 spent</p>
+    </div>
+
+    <!-- Retreat 3 -->
+    <div class="card">
+      <img src="images/retreat3.png" alt="Mediterranean Detox" class="h-48 w-full object-cover rounded-lg mb-6">
+      <h2 class="text-2xl text-blue-400 font-bold mb-2">Mediterranean Detox</h2>
+      <p class="text-gray-300 text-sm mb-2">Luxury detox retreat with custom MycoHero nutrition plans.</p>
+      <p class="text-yellow-300 font-bold">Earn 10 Hero Points per €1 spent</p>
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gray-800 py-16 text-center">
+    <h2 class="text-4xl font-bold text-yellow-400 mb-6">Step Into Balance</h2>
+    <p class="text-gray-300 mb-8">HeroZen retreats combine science, nature, and luxury. Book direct and maximize your Hero Points.</p>
+    <a href="rewards.html" class="bg-yellow-500 hover:bg-yellow-600 py-4 px-8 rounded-full font-bold text-lg">Join a Retreat</a>
+  </section>
+
+</body>
+</html>
