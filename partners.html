@@ -6,13 +6,31 @@
   <title>MycoHero+ Partners</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body { background: #0f172a; font-family: 'Montserrat', sans-serif; color: white; }
-    .gradient-text { background: linear-gradient(90deg,#9333ea,#ec4899,#22c55e,#3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .card { background: #1e293b; border-radius: 12px; padding: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .card:hover { transform: translateY(-6px); box-shadow: 0 10px 25px rgba(59,130,246,0.4); }
+    body { 
+      margin: 0;
+      background: url('/images/mycohero-bg.png') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Montserrat', sans-serif; 
+      color: white; 
+    }
+    .gradient-text { 
+      background: linear-gradient(90deg,#9333ea,#ec4899,#22c55e,#3b82f6); 
+      -webkit-background-clip: text; 
+      -webkit-text-fill-color: transparent; 
+    }
+    .card { 
+      background: rgba(30,41,59,0.9); 
+      border-radius: 12px; 
+      padding: 20px; 
+      transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    }
+    .card:hover { 
+      transform: translateY(-6px); 
+      box-shadow: 0 10px 25px rgba(59,130,246,0.4); 
+    }
   </style>
 </head>
-<body>
+<body class="subpage">
 
   <!-- Navbar -->
   <nav class="bg-gray-900 border-b border-gray-800 fixed w-full z-20 top-0">
@@ -67,7 +85,7 @@
   </section>
 
   <!-- CTA -->
-  <section class="bg-gray-800 py-16 text-center">
+  <section class="bg-gray-800 bg-opacity-90 py-16 text-center">
     <h2 class="text-4xl font-bold text-purple-400 mb-6">More Partners Coming Soon</h2>
     <p class="text-gray-300 mb-8">We’re expanding the Hero ecosystem. Soon, you’ll be able to redeem Hero Points in gyms, juice bars, spas, and online wellness brands worldwide.</p>
     <a href="rewards.html" class="bg-purple-600 hover:bg-purple-700 py-4 px-8 rounded-full font-bold text-lg">Learn About Rewards</a>
